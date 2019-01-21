@@ -22,7 +22,7 @@ pod 'ActionsDrawer'
 
 ## Author
 
-Francis, francis@greencopper.com
+Francis, francis.beauchamp@finecraftedapps.com
 
 ## License
 

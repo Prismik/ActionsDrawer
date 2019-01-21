@@ -11,6 +11,12 @@ import UIKit
 class ActionsDrawerPresentationController: UIPresentationController {
     private let backgroundView = UIView()
 
+    override var frameOfPresentedViewInContainerView: CGRect {
+        guard let containerView =  containerView else { return .zero }
+        return CGRect(x: 0, y: containerView.frame.height * (1 - 0.45),
+                      width: containerView.frame.width, height: containerView.frame.height * 0.45)
+    }
+
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
         backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapBackground)))
@@ -46,16 +52,18 @@ class ActionsDrawerPresentationController: UIPresentationController {
         })
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        coordinator.animate(alongsideTransition: { (_) in
+            self.presentedView?.frame = self.frameOfPresentedViewInContainerView
+        }, completion: nil)
+    }
+
     override func containerViewDidLayoutSubviews() {
         guard let containerView = containerView else { return }
 
         backgroundView.frame = containerView.frame
-    }
-
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        guard let containerView =  containerView else { return }
-        presentedView?.frame = CGRect(x: 0, y: containerView.frame.height,
-                                      width: containerView.frame.width, height: containerView.frame.height * 0.45)
     }
 
     @objc private func didTapBackground() {
