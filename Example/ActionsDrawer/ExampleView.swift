@@ -11,6 +11,7 @@ import ActionsDrawer
 
 protocol ExampleViewDelegate: class {
     func presentDrawer()
+    func presentDrawerUsingProtocol()
 }
 
 class ExampleView: UIView {

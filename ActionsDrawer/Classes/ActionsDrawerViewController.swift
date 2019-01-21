@@ -13,6 +13,11 @@ public protocol ActionsDrawerViewControllerDelegate: class {
 }
 
 public class ActionsDrawerViewController: UIViewController {
+    private enum HeaderType {
+        case title(value: String)
+        case actionableItem(value: ActionableItem)
+    }
+
     public weak var delegate: ActionsDrawerViewControllerDelegate?
 
     public let interactor = ActionsDrawerInteractor()
@@ -21,11 +26,19 @@ public class ActionsDrawerViewController: UIViewController {
     }
 
     private let actionGroups: [ActionGroup]
-    private let actionableItem: ActionableItem
+    private let headerType: HeaderType
 
-    public init(actionableItem: ActionableItem, actionGroups: [ActionGroup]) {
+    public convenience init(title: String, actionGroups: [ActionGroup]) {
+        self.init(headerType: HeaderType.title(value: title), actionGroups: actionGroups)
+    }
+
+    public convenience init(actionableItem: ActionableItem, actionGroups: [ActionGroup]) {
+        self.init(headerType: HeaderType.actionableItem(value: actionableItem), actionGroups: actionGroups)
+    }
+
+    private init(headerType: HeaderType, actionGroups: [ActionGroup]) {
+        self.headerType = headerType
         self.actionGroups = actionGroups
-        self.actionableItem = actionableItem
         super.init(nibName: nil, bundle: nil)
 
         modalPresentationStyle = .custom
@@ -37,7 +50,13 @@ public class ActionsDrawerViewController: UIViewController {
     }
 
     public override func loadView() {
-        let drawerView = ActionsDrawerView(actionableItem: actionableItem, actionGroups: actionGroups)
+        let drawerView: ActionsDrawerView
+        switch headerType {
+        case .title(let value):
+            drawerView = ActionsDrawerView(title: value, actionGroups: actionGroups)
+        case .actionableItem(let value):
+            drawerView = ActionsDrawerView(actionableItem: value, actionGroups: actionGroups)
+        }
         drawerView.delegate = self
         self.view = drawerView
     }

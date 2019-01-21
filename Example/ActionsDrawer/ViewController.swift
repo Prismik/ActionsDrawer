@@ -60,4 +60,26 @@ extension ViewController: ExampleViewDelegate {
         drawerViewController.transitioningDelegate = drawerViewController
         present(drawerViewController, animated: true, completion: nil)
     }
+
+    func presentDrawerUsingProtocol() {
+        let drawerViewController = ActionsDrawerViewController(title: "Title provided as a string", actionGroups: [
+            ActionGroup(actions: [
+                Action(icon: nil, title: "Do the thing", tintColor: .blue, handler: {
+                    print("Did the thing")
+                }),
+                Action(icon: nil, title: "Do the other thing", tintColor: .blue, handler: {
+                    print("Did the other thing")
+                })
+                ]),
+            ActionGroup(actions: [
+                Action(icon: nil, title: "Do the dangerous thing thing", tintColor: .red, handler: {
+                    print("Did the dangerous thing")
+                })
+            ])
+        ])
+        self.drawerController = drawerViewController
+        drawerViewController.delegate = self
+        drawerViewController.transitioningDelegate = drawerViewController
+        present(drawerViewController, animated: true, completion: nil)
+    }
 }

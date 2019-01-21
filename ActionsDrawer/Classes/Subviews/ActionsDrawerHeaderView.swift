@@ -13,15 +13,26 @@ class ActionsDrawerHeaderView: UIView {
     private var itemView: UIView
     private var separatorView = UIView()
 
-    init(actionableItem: ActionableItem) {
-        itemView = actionableItem.drawerView
+    convenience init(title: String) {
+        let label = UILabel()
+        label.text = title
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .black
+        self.init(titleView: label)
+    }
+
+    convenience init(actionableItem: ActionableItem) {
+        self.init(titleView: actionableItem.drawerView)
+    }
+
+    private init(titleView: UIView) {
+        self.itemView = titleView
         super.init(frame: .zero)
 
         handleView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.7)
         handleView.layer.cornerRadius = 2
         addSubview(handleView)
 
-        itemView = actionableItem.drawerView
         addSubview(itemView)
 
         separatorView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)

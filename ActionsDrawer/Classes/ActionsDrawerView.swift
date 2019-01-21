@@ -37,9 +37,18 @@ class ActionsDrawerView: UIView {
     private let headerHeight: CGFloat = 30
     private let actionHeight: CGFloat = 60
 
-    init(actionableItem: ActionableItem, actionGroups: [ActionGroup]) {
-        headerView = ActionsDrawerHeaderView(actionableItem: actionableItem)
+    convenience init(title: String, actionGroups: [ActionGroup]) {
+        self.init(headerView: ActionsDrawerHeaderView(title: title), actionGroups: actionGroups)
+    }
+
+    convenience init(actionableItem: ActionableItem, actionGroups: [ActionGroup]) {
+        self.init(headerView: ActionsDrawerHeaderView(actionableItem: actionableItem), actionGroups: actionGroups)
+    }
+
+    private init(headerView: ActionsDrawerHeaderView, actionGroups: [ActionGroup]) {
+        self.headerView = headerView
         super.init(frame: .zero)
+
         items = mapActionGroups(actionGroups)
 
         addSubview(headerView)
@@ -63,7 +72,6 @@ class ActionsDrawerView: UIView {
         layer.mask = shapeLayer
         clipsToBounds = true
     }
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
