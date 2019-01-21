@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ActionsDrawer'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ActionsDrawer.'
+  s.summary          = 'A prettier alternative to action sheets.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+ActionsDrawer is built as a replacement to the standard action sheets. Action sheets provide little to no customization UI wise, while ActionsDrawer lets you display actions however you want (grouped, with images, etc.) in a scrollable area.
                        DESC
 
   s.homepage         = 'https://github.com/Francis/ActionsDrawer'
