@@ -1,0 +1,24 @@
+PODS:
+  - ActionsDrawer (0.1.0):
+    - PinLayout (~> 1.8)
+  - PinLayout (1.8.6)
+
+DEPENDENCIES:
+  - ActionsDrawer (from `../`)
+  - PinLayout (~> 1.8)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PinLayout
+
+EXTERNAL SOURCES:
+  ActionsDrawer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ActionsDrawer: d87f67b0bc0a2536fb0f2fd5516ba68c8f28ca02
+  PinLayout: fe2a2432d6982588e208572005c941aeeae417ab
+
+PODFILE CHECKSUM: d354f5ddfc22f65daffa9a964568b209eba62529
+
+COCOAPODS: 1.5.3

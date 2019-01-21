@@ -1,0 +1,28 @@
+{
+  "name": "ActionsDrawer",
+  "version": "0.1.0",
+  "summary": "A short description of ActionsDrawer.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Francis/ActionsDrawer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Francis": "francis.beauchamp@finecraftedapps.com"
+  },
+  "source": {
+    "git": "https://github.com/Francis/ActionsDrawer.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ActionsDrawer/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "PinLayout": [
+      "~> 1.8"
+    ]
+  }
+}

@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'ActionsDrawer_Example' do
   pod 'ActionsDrawer', :path => '../'
+  pod 'PinLayout', '~> 1.8'
 
   target 'ActionsDrawer_Tests' do
     inherit! :search_paths

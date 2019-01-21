@@ -1,0 +1,6 @@
+framework module ActionsDrawer {
+  umbrella header "ActionsDrawer-umbrella.h"
+
+  export *
+  module * { export * }
+}
