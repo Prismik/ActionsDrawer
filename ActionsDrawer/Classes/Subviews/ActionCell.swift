@@ -39,7 +39,8 @@ public class ActionCell: UITableViewCell {
         super.layoutSubviews()
 
         let sideMargin: CGFloat = 20
-        iconView.pin.left(sideMargin).size(16).vCenter()
+        let hasImage = iconView.image != nil
+        iconView.pin.left(hasImage ? sideMargin : 0).size(hasImage ? 16 : 0).vCenter()
         actionText.pin.right(of: iconView).marginLeft(sideMargin).vertically().right()
     }
 }

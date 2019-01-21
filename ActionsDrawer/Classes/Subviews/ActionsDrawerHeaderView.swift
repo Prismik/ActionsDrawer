@@ -18,6 +18,7 @@ class ActionsDrawerHeaderView: UIView {
         label.text = title
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .black
+        label.textAlignment = .center
         self.init(titleView: label)
     }
 

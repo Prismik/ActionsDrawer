@@ -5,6 +5,12 @@
 [![License](https://img.shields.io/cocoapods/l/ActionsDrawer.svg?style=flat)](https://cocoapods.org/pods/ActionsDrawer)
 [![Platform](https://img.shields.io/cocoapods/p/ActionsDrawer.svg?style=flat)](https://cocoapods.org/pods/ActionsDrawer)
 
+## What does it look like?
+
+<p align="left">
+<img src="./Gifs/main.gif" width=40%">
+</p>
+
 ## How to use
 
 ```swift

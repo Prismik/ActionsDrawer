@@ -11,6 +11,7 @@
 		1538E7EA21F61CEB00A24A7A /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1538E7E921F61CEB00A24A7A /* Pizza.swift */; };
 		1538E7EC21F621EA00A24A7A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1538E7EB21F621EA00A24A7A /* Launch Screen.storyboard */; };
 		1538E7EE21F62DB600A24A7A /* ActionsDrawer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1538E7ED21F62DB600A24A7A /* ActionsDrawer.framework */; };
+		1538E81121F662B200A24A7A /* main.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1538E81021F662B200A24A7A /* main.gif */; };
 		53ABCC9EB6455540C0727848 /* Pods_ActionsDrawer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EC94881908E6DB3A28DF3C /* Pods_ActionsDrawer_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		1538E7E921F61CEB00A24A7A /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
 		1538E7EB21F621EA00A24A7A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1538E7ED21F62DB600A24A7A /* ActionsDrawer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ActionsDrawer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1538E81021F662B200A24A7A /* main.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = main.gif; sourceTree = "<group>"; };
 		2718109E347439FB6A465C92 /* Pods-ActionsDrawer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActionsDrawer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ActionsDrawer_Tests/Pods-ActionsDrawer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3913B5E4C73D64A15B505137 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		417ED75FC4C627408C93E4CA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -92,6 +94,15 @@
 				1538E7E921F61CEB00A24A7A /* Pizza.swift */,
 			);
 			name = Domain;
+			sourceTree = "<group>";
+		};
+		1538E80F21F6600200A24A7A /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				1538E81021F662B200A24A7A /* main.gif */,
+			);
+			name = Gifs;
+			path = ../Gifs;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -157,6 +168,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				1538E80F21F6600200A24A7A /* Gifs */,
 				FE57834EB034E0004FFFFC82 /* ActionsDrawer.podspec */,
 				417ED75FC4C627408C93E4CA /* README.md */,
 				3913B5E4C73D64A15B505137 /* LICENSE */,
@@ -263,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1538E7EC21F621EA00A24A7A /* Launch Screen.storyboard in Resources */,
+				1538E81121F662B200A24A7A /* main.gif in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

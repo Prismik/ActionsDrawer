@@ -18,14 +18,20 @@ class ExampleView: UIView {
     weak var delegate: ExampleViewDelegate?
 
     private let showDrawerButton = UIButton()
+    private let showTitleDrawerButton = UIButton()
 
     init() {
         super.init(frame: .zero)
 
         showDrawerButton.setTitleColor(.blue, for: .normal)
-        showDrawerButton.setTitle("Show drawer", for: .normal)
+        showDrawerButton.setTitle("Actionable", for: .normal)
         showDrawerButton.addTarget(self, action: #selector(presentDrawer), for: .touchUpInside)
         addSubview(showDrawerButton)
+
+        showTitleDrawerButton.setTitleColor(.blue, for: .normal)
+        showTitleDrawerButton.setTitle("Title", for: .normal)
+        showTitleDrawerButton.addTarget(self, action: #selector(presentTitleDrawer), for: .touchUpInside)
+        addSubview(showTitleDrawerButton)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -36,9 +42,15 @@ class ExampleView: UIView {
         super.layoutSubviews()
 
         showDrawerButton.frame = CGRect(x: 0, y: (frame.height - 50) / 2, width: frame.width, height: 50)
+
+        showTitleDrawerButton.frame = CGRect(x: 0, y: showDrawerButton.frame.maxY + 20, width: frame.width, height: 50)
     }
 
     @objc private func presentDrawer() {
         delegate?.presentDrawer()
+    }
+
+    @objc private func presentTitleDrawer() {
+        delegate?.presentDrawerUsingProtocol()
     }
 }
