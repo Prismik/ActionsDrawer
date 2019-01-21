@@ -18,7 +18,7 @@ public class ActionGroupCell: UITableViewCell {
     }
 
     private let separator = UIView()
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         separator.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)

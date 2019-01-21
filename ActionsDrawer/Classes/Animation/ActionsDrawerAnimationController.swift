@@ -49,7 +49,7 @@ extension ActionsDrawerAnimationController: UIViewControllerAnimatedTransitionin
 
         drawer.frame = CGRect(x: 0, y: transitionContext.containerView.frame.height, width: drawer.frame.width, height: drawer.frame.height)
 
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             drawer.frame = CGRect(x: 0, y: transitionContext.containerView.frame.height - drawer.frame.height, width: drawer.frame.width, height: drawer.frame.height)
         }, completion: { _ in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
@@ -59,7 +59,7 @@ extension ActionsDrawerAnimationController: UIViewControllerAnimatedTransitionin
     private func dismiss(from fromViewController: UIViewController, to toViewController: UIViewController, using transitionContext: UIViewControllerContextTransitioning) {
         guard let drawer = fromViewController.view else { return }
 
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIView.AnimationOptions.curveEaseIn, animations: {
             drawer.frame = CGRect(x: 0, y: transitionContext.containerView.frame.height, width: drawer.frame.width, height: drawer.frame.height)
         }, completion: { _ in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)

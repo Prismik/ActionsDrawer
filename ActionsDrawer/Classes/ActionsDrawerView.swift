@@ -15,7 +15,7 @@ public protocol ActionableItem {
 
 protocol ActionsDrawerViewDelegate: class {
     func didSelectAction(_ action: Action)
-    func didPan(_ progress: CGFloat, state: UIGestureRecognizerState)
+    func didPan(_ progress: CGFloat, state: UIGestureRecognizer.State)
 }
 
 class ActionsDrawerView: UIView {

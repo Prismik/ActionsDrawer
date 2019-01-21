@@ -50,7 +50,7 @@ extension ActionsDrawerViewController: ActionsDrawerViewDelegate {
         })
     }
 
-    func didPan(_ progress: CGFloat, state: UIGestureRecognizerState) {
+    func didPan(_ progress: CGFloat, state: UIGestureRecognizer.State) {
         ActionsDrawerHelper.mapGestureStateToInteractor(gestureState: state, progress: progress, interactor: interactor, presenting: false) {
             self.dismiss(animated: true, completion: nil)
         }
